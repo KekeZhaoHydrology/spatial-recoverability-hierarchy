@@ -1,0 +1,9 @@
+# Suggested compatible packages, NOT verified historical environment pins.
+numpy
+pandas
+scikit-learn
+joblib
+TensorFlow
+xgboost
+h5py
+openpyxl  # only for XLSX input support

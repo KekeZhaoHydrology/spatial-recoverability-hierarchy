@@ -1,0 +1,26 @@
+# Python and local development files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Local observations, station tables, and temporary results
+**/data/
+**/data_private/
+**/station_data/
+**/station_inputs/
+training/outputs/
+**/outputs/
+*.csv
+*.xlsx
+*.xls
+*.pkl
+*.pickle
+*.parquet
+*.tif
+*.tiff
+*.nc
+*.grib
+
+# Pretrained model files and scalers in model_artifacts/ are intentionally
+# not ignored. Review staged files before committing.
