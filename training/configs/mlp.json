@@ -1,0 +1,20 @@
+{
+  "stage_input_directories": {
+    "Tavg": "../data/1meteorological-csv",
+    "Tmax": "../data/1meteorological-csv-MeanTEM",
+    "Tmin": "../data/1meteorological-csv-HighTEM",
+    "Ps": "../data/1meteorological-csv-LowTEM",
+    "RH": "../data/1meteorological-csv-MeanPress",
+    "SD": "../data/1meteorological-csv-MeanRHU"
+  },
+  "training_settings": {
+    "missing_value_indicator": 32766,
+    "validation_fraction": 0.1,
+    "split_random_state": 42,
+    "epochs": 600,
+    "batch_size": 16,
+    "patience": 80,
+    "optimizer": "adam",
+    "loss": "mse"
+  }
+}

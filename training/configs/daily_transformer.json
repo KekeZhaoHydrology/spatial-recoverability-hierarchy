@@ -1,0 +1,16 @@
+{
+  "input_directory": "../data/1meteorological-csv",
+  "training_settings": {
+    "epochs": 500,
+    "batch_size": 16,
+    "patience": 80,
+    "validation_fraction": 0.1,
+    "split_random_state": 42,
+    "num_heads": 3,
+    "num_layers": 3,
+    "dropout_rate": 0.1,
+    "l2_regularization": 1e-06,
+    "optimizer": "adam",
+    "loss": "mse"
+  }
+}

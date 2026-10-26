@@ -1,0 +1,16 @@
+{
+  "input_directory": "../data/1meteorological-csv",
+  "output_directory": "../outputs/pooled_transformer",
+  "start_year": 1991,
+  "end_year": 2019,
+  "training_settings": {
+    "validation_fraction": 0.1,
+    "split_random_state": 42,
+    "batch_size": 12000,
+    "num_heads": 3,
+    "num_layers": 3,
+    "dff": 300,
+    "optimizer": "adam",
+    "loss": "mse"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "input_directory": "../data/1meteorological-csv-Suntime",
+  "training_settings": {
+    "validation_fraction": 0.1,
+    "split_random_state": 42,
+    "early_stopping_rounds": 150,
+    "eval_metric_name": "test",
+    "missing_value_indicator_for_audit": 32766
+  }
+}

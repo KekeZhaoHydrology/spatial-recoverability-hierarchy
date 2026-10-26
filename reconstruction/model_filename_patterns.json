@@ -1,0 +1,98 @@
+{
+  "mlp": {
+    "Tavg": {
+      "target": "MeanTEM",
+      "weights": "best_model_MeanTEM_checkpoint-{date}.h5",
+      "scaler": "MeanTEM_scaler_{date}.save"
+    },
+    "Tmax": {
+      "target": "HighTEM",
+      "weights": "best_model_HighTEM_checkpoint-{date}.h5",
+      "scaler": "MaxTEM_scaler_{date}.save"
+    },
+    "Tmin": {
+      "target": "LowTEM",
+      "weights": "best_model_LowTEM_checkpoint-{date}.h5",
+      "scaler": "MinTEM_scaler_{date}.save"
+    },
+    "Ps": {
+      "target": "MeanPress",
+      "weights": "best_model_MeanPress_checkpoint-{date}.h5",
+      "scaler": "MeanPress_scaler_{date}.save"
+    },
+    "RH": {
+      "target": "MeanRHU",
+      "weights": "best_model_MeanRHU_checkpoint-{date}.h5",
+      "scaler": "MeanRHU_scaler_{date}.save"
+    },
+    "SD": {
+      "target": "Suntime",
+      "weights": "best_model_Suntime_checkpoint-{date}.h5",
+      "scaler": "Suntime_scaler_{date}.save"
+    }
+  },
+  "xgboost": {
+    "Tavg": {
+      "target": "MeanTEM",
+      "weights": "complete_model_MeanTEM_checkpoint-{date}.model",
+      "scaler": "MeanTEM_scaler_{date}.save"
+    },
+    "Tmax": {
+      "target": "HighTEM",
+      "weights": "complete_model_HighTEM_checkpoint-{date}.model",
+      "scaler": "MaxTEM_scaler_{date}.save"
+    },
+    "Tmin": {
+      "target": "LowTEM",
+      "weights": "complete_model_LowTEM_checkpoint-{date}.model",
+      "scaler": "MinTEM_scaler_{date}.save"
+    },
+    "Ps": {
+      "target": "MeanPress",
+      "weights": "complete_model_MeanPress_checkpoint-{date}.model",
+      "scaler": "MeanPress_scaler_{date}.save"
+    },
+    "RH": {
+      "target": "MeanRHU",
+      "weights": "complete_model_MeanRHU_checkpoint-{date}.model",
+      "scaler": "MeanRHU_scaler_{date}.save"
+    },
+    "SD": {
+      "target": "Suntime",
+      "weights": "complete_model_Suntime_checkpoint-{date}.model",
+      "scaler": "Suntime_scaler_{date}.save"
+    }
+  },
+  "daily_transformer": {
+    "Tavg": {
+      "target": "MeanTEM",
+      "weights": "best_model_MeanTEM_{date}.h5",
+      "scaler": "MeanTEM_scaler_{date}.save"
+    },
+    "Tmax": {
+      "target": "HighTEM",
+      "weights": "best_model_HighTEM_{date}.h5",
+      "scaler": "MaxTEM_scaler_{date}.save"
+    },
+    "Tmin": {
+      "target": "LowTEM",
+      "weights": "best_model_LowTEM_{date}.h5",
+      "scaler": "MinTEM_scaler_{date}.save"
+    },
+    "Ps": {
+      "target": "MeanPress",
+      "weights": "best_model_MeanPress_{date}.h5",
+      "scaler": "MeanPress_scaler_{date}.save"
+    },
+    "RH": {
+      "target": "MeanRHU",
+      "weights": "best_model_MeanRHU_{date}.h5",
+      "scaler": "MeanRHU_scaler_{date}.save"
+    },
+    "SD": {
+      "target": "Suntime",
+      "weights": "best_model_Suntime_{date}.h5",
+      "scaler": "Suntime_scaler_{date}.save"
+    }
+  }
+}
