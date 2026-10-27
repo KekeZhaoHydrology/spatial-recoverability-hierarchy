@@ -22,5 +22,6 @@ training/outputs/
 *.nc
 *.grib
 
-# Pretrained model files and scalers in model_artifacts/ are intentionally
-# not ignored. Review staged files before committing.
+# Trained model artifacts are distributed separately through GitHub Releases v1.0.0
+# https://github.com/KekeZhaoHydrology/spatial-recoverability-hierarchy/releases/tag/v1.0.0
+/model_artifacts/
