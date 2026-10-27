@@ -7,14 +7,14 @@ Code accompanying the study of multivariable meteorological reconstruction over 
 ```text
 training/             Model architectures, training scripts, and configurations
 reconstruction/       Model-specific estimation scripts and shared utilities
-model_artifacts/      Pretrained models, fitted scalers, and training metrics
-                      (mlp/, xgboost/, daily_transformer/, pooled_transformer/)
+model_artifacts/      Pretrained model artifacts (download separately from GitHub Releases;
+                      restore locally before pretrained-model estimation)
 tests/                Tests for input features, naming, and estimation interfaces
 tools/                Utility for exporting newly trained model artifacts
 requirements.txt      Python dependencies
 ```
 
-Each model family in `model_artifacts/` has six variable directories: `Tavg`, `Tmax`, `Tmin`, `Ps`, `RH`, and `SD`. The original checkpoint and scaler filenames are preserved. Training performance metrics are provided as text files.
+After downloading and extracting the release archives, `model_artifacts/` contains four model-family directories: `mlp/`, `xgboost/`, `daily_transformer/`, and `pooled_transformer/`. Each contains the six variable directories `Tavg`, `Tmax`, `Tmin`, `Ps`, `RH`, and `SD`. Original checkpoint and scaler filenames are preserved, and training performance metrics are provided as text files. The model artifacts are not stored in the source-code repository; they are distributed as ZIP assets in [Model artifacts v1.0.0](https://github.com/KekeZhaoHydrology/spatial-recoverability-hierarchy/releases/tag/v1.0.0).
 
 ## Variables and predictors
 
@@ -96,4 +96,26 @@ Station inputs must include the relevant geographic predictors and, for subseque
 
 Station identifiers, observation periods, variable availability, and available metadata are reported in **Supplementary Tables 1–4** of the accompanying manuscript. Publicly available daily observations can be obtained from the original data providers. Third-party observation datasets and prepared station training/evaluation files are not redistributed in this repository.
 
-Pretrained model parameters, fitted scalers, and training performance metrics are provided in `model_artifacts/`. The daily-model artifacts include 1998 as an example year, while the pooled Transformer artifacts correspond to the 1991–2019 training period.
+Pretrained model parameters, fitted scalers, and training performance metrics are available separately under the repository's [Model artifacts v1.0.0](https://github.com/KekeZhaoHydrology/spatial-recoverability-hierarchy/releases/tag/v1.0.0), rather than in the source-code repository. The daily-model artifacts include 1998 as an example year, while the pooled Transformer artifacts correspond to the 1991–2019 training period.
+
+### Restoring pretrained model artifacts
+
+Download the five archives from the [Model artifacts v1.0.0 release](https://github.com/KekeZhaoHydrology/spatial-recoverability-hierarchy/releases/tag/v1.0.0) :
+
+- `daily_transformer.zip` — daily Transformer artifacts
+- `mlp.zip` — MLP artifacts
+- `pooled_transformer.zip` — pooled Transformer artifacts
+- `xgboost1.zip` — XGBoost artifacts for Tavg, Tmax, and Tmin
+- `xgboost2.zip` — XGBoost artifacts for Ps, RH, and SD
+
+Extract their contents under the repository root so that the final local structure is:
+
+```text
+model_artifacts/
+├── daily_transformer/
+├── mlp/
+├── pooled_transformer/
+└── xgboost/
+```
+
+Extract `xgboost1.zip` and `xgboost2.zip` into the same `model_artifacts/xgboost/` directory; retain the six stage subdirectories and any accompanying metric files. Depending on whether each archive already contains its model-family directory, choose the extraction destination accordingly to avoid nested duplicate directories (such as `model_artifacts/mlp/mlp/`). This local layout is required by the estimation scripts' default `--artifacts-root` setting. Training scripts can be run independently with prepared input data.
